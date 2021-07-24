@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WindowsWindowShortcutsUtility
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         // --- Consts ---
         const int WM_HOTKEY = 0x0312;
@@ -41,7 +41,7 @@ namespace WindowsWindowShortcutsUtility
             Down = 4
         }
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
