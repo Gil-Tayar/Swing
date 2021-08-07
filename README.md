@@ -12,3 +12,6 @@ The main purpose of this project is to help you move more fluently between windo
 |Move to Window on the left |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>                    |
 |Move to Window above       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>                      |
 |Move to Window below       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>                    |
+
+## Demo
+![](WWST.gif)
