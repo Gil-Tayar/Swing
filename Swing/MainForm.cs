@@ -82,6 +82,12 @@ namespace Swing
         {
             this.notifyIcon.ContextMenuStrip = new ContextMenuStrip();
             this.notifyIcon.ContextMenuStrip.Items.Add("Exit", null, this.CloseApplication);
+            
+            // show "running" popup
+            this.notifyIcon.BalloonTipText = "Swift is running";
+            this.notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipTitle = "Swift";
+            this.notifyIcon.ShowBalloonTip(200);
         }
 
         protected override void WndProc(ref Message m)
