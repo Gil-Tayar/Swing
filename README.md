@@ -1,4 +1,4 @@
-# Windows Window Shortcuts Utility
+# Swing
 
 ## Info
 The main purpose of this project is to help you move more fluently between windows
