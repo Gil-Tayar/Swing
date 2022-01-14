@@ -149,7 +149,7 @@ namespace Swing
 
         private IntPtr GetNeighborWindow(IntPtr hWnd, Direction direction)
         {
-            // hWnd - the window we find neighbor off
+            // hWnd - the window we find neighbor of
             // direction - the direction of the neighbor
 
             // get the current window coordinates
@@ -235,7 +235,7 @@ namespace Swing
                 return IntPtr.Zero;
 
             string title = WinApi.GetWindowTitle(hWnd);
-            if (title != String.Empty && !title.Equals("Program Manager")) // realy weird bug
+            if (title != String.Empty && !title.Equals("Program Manager")) // really weird bug
             {
                 return hWnd;
             }
