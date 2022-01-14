@@ -14,6 +14,8 @@ namespace Swing
     public partial class MainForm : Form
     {
         // --- Consts ---
+        const string APP_NAME = "Swing";
+
         const int WM_HOTKEY = 0x0312;
         const int MAXIMIZE_HOTKEY_ID = 000005;
         const int MINIMIZE_HOTKEY_ID = 000006;
@@ -23,11 +25,15 @@ namespace Swing
         const int MOVE_UP_HOTKEY_ID = 000003;
         const int MOVE_DOWN_HOTKEY_ID = 000004;
 
+        const string REGISTRY_STARTUP = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+        string REGISTRY_SWING = String.Format("SOFTWARE\\{0}", APP_NAME);
+        const string REGISTRY_FIRST_RUN = "DidRunOnce";
+
         // how much to jump aside for searching new window
         const int WINDOW_BUFFER = 20;
         const int WINDOW_SPLIT_SIZE = 10;
 
-        const string APP_NAME = "Swing";
+        
         
         // --- Variables --- 
         IntPtr lastMaximizedHwnd = IntPtr.Zero;
@@ -65,6 +71,11 @@ namespace Swing
             SetStartup();
             TrayMenuContext();
             this.Visible = false;
+
+            if (IsFirstRun()) {
+                FirstTimeForm form = new FirstTimeForm();
+                form.Show();
+            }
         }
 
         private void TrayMenuContext()
@@ -102,13 +113,53 @@ namespace Swing
             base.WndProc(ref m);
         }
 
-        public static void SetStartup()
+        private void SetStartup()
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey
-                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey(REGISTRY_STARTUP, true);
 
             if (rk.GetValue(APP_NAME) == null)
                 rk.SetValue(APP_NAME, Application.ExecutablePath);
+        }
+
+        private bool IsFirstRun()
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey(REGISTRY_SWING, true);
+            
+            if (rk == null)
+            {
+                // this is first run, create Key and return
+                rk = Registry.CurrentUser.CreateSubKey(REGISTRY_SWING);
+            }
+
+            if (rk == null)
+            {
+                // unhandeled error
+                return false;
+            }
+
+            object regValue = rk.GetValue(REGISTRY_FIRST_RUN);
+            bool? didRunOnce = false;
+            
+            if (regValue != null)
+            {
+                try
+                {
+                    didRunOnce = Convert.ToBoolean(regValue);
+                }
+                catch
+                {
+                    // someone messed up the content of the registry value, continue
+                }
+            }
+
+            if (didRunOnce == false)
+            {
+                // first run
+                rk.SetValue(REGISTRY_FIRST_RUN, true);
+                return true;
+            }
+
+            return false;
         }
 
         private void HandleMaximizeEvent()
@@ -149,7 +200,7 @@ namespace Swing
 
         private IntPtr GetNeighborWindow(IntPtr hWnd, Direction direction)
         {
-            // hWnd - the window we find neighbor off
+            // hWnd - the window we find neighbor of
             // direction - the direction of the neighbor
 
             // get the current window coordinates
@@ -235,7 +286,7 @@ namespace Swing
                 return IntPtr.Zero;
 
             string title = WinApi.GetWindowTitle(hWnd);
-            if (title != String.Empty && !title.Equals("Program Manager")) // realy weird bug
+            if (title != String.Empty && !title.Equals("Program Manager")) // really weird bug
             {
                 return hWnd;
             }
