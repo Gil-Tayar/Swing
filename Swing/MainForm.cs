@@ -224,7 +224,7 @@ namespace Swing
                     yStart = currentWindow.Top + WINDOW_BUFFER;
                     yEnd = currentWindow.Bottom;
 
-                    return GetWindowInRang(xStart, xEnd, yStart, yEnd, windowSectionSize);
+                    return GetWindowInRange(xStart, xEnd, yStart, yEnd, windowSectionSize);
 
                 case Direction.Right:
                     windowSectionSize = (Screen.PrimaryScreen.Bounds.Width - currentWindow.Right) / WINDOW_SPLIT_SIZE;
@@ -233,7 +233,7 @@ namespace Swing
                     yStart = currentWindow.Top + WINDOW_BUFFER;
                     yEnd = currentWindow.Bottom;
 
-                    return GetWindowInRang(xStart, xEnd, yStart, yEnd, windowSectionSize);
+                    return GetWindowInRange(xStart, xEnd, yStart, yEnd, windowSectionSize);
 
                 case Direction.Up:
                     windowSectionSize = (Screen.PrimaryScreen.Bounds.Width - currentWindow.Left) / WINDOW_SPLIT_SIZE;
@@ -242,7 +242,7 @@ namespace Swing
                     yStart = currentWindow.Top - WINDOW_BUFFER;
                     yEnd = 0;
 
-                    return GetWindowInRang(xStart, xEnd, yStart, yEnd, windowSectionSize);
+                    return GetWindowInRange(xStart, xEnd, yStart, yEnd, windowSectionSize);
 
                 case Direction.Down:
                     windowSectionSize = (Screen.PrimaryScreen.Bounds.Width - currentWindow.Left) / WINDOW_SPLIT_SIZE;
@@ -251,13 +251,13 @@ namespace Swing
                     yStart = currentWindow.Bottom + WINDOW_BUFFER;
                     yEnd = Screen.PrimaryScreen.Bounds.Height;
 
-                    return GetWindowInRang(xStart, xEnd, yStart, yEnd, windowSectionSize);
+                    return GetWindowInRange(xStart, xEnd, yStart, yEnd, windowSectionSize);
             }
 
             return IntPtr.Zero;
         }
 
-        private IntPtr GetWindowInRang(int xStart, int xEnd, int yStart, int yEnd, int windowSectionSize)
+        private IntPtr GetWindowInRange(int xStart, int xEnd, int yStart, int yEnd, int windowSectionSize)
         {
             if (xStart < 0 || xStart > Screen.PrimaryScreen.Bounds.Width || yStart < 0 || yStart > Screen.PrimaryScreen.Bounds.Height)
                 return IntPtr.Zero;
@@ -281,6 +281,7 @@ namespace Swing
                         return window;
                 }
             }
+
             return IntPtr.Zero;
         }
 
