@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,6 +60,11 @@ namespace Swing
 
         public void Initialize()
         {
+            if(IsAlreadyRunning())
+            {
+                Application.Exit();
+            }
+
             // Alt = 1, Ctrl = 2, Shift = 4, Win = 8; also can sum them up, 3 = alt and ctrl
             WinApi.RegisterHotKey(this.Handle, MAXIMIZE_HOTKEY_ID, 3, (int)Keys.Enter);     // ctrl+alt + enter
             WinApi.RegisterHotKey(this.Handle, MINIMIZE_HOTKEY_ID, 5, (int)Keys.Enter);     // shift+alt + enter
@@ -165,6 +171,17 @@ namespace Swing
                 return true;
             }
 
+            return false;
+        }
+
+        private bool IsAlreadyRunning()
+        {
+            Process[] p = Process.GetProcessesByName(APP_NAME);
+            if (p.Length > 1)
+            {
+                MessageBox.Show("It seems like Swing is already running...");
+                return true;
+            }
             return false;
         }
 
