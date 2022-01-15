@@ -15,3 +15,8 @@ The main purpose of this project is to help you move more fluently between windo
 
 ## Demo
 ![](WWST.gif)
+
+## Installation
+Click here to download the latest release
+[![Download Swing](https://img.shields.io/badge/download-Swing.zip-blue?style=for-the-badge)](https://github.com/Gil-Tayar/Swing/releases/latest/download/Swing.zip)
+After that, unzip the file and run setup.exe
