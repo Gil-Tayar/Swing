@@ -88,12 +88,7 @@ namespace Swing
         {
             this.notifyIcon.ContextMenuStrip = new ContextMenuStrip();
             this.notifyIcon.ContextMenuStrip.Items.Add("Exit", null, this.CloseApplication);
-            this.notifyIcon.BalloonTipClosed += (sender, e) => {
-                var thisIcon = (NotifyIcon)sender;
-                thisIcon.Visible = false;
-                thisIcon.Dispose();
-            };
-
+            
             // show "running" popup
             this.notifyIcon.BalloonTipText = "Swift is running";
             this.notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
@@ -324,6 +319,9 @@ namespace Swing
 
         private void CloseApplication(object sender, EventArgs e)
         {
+            notifyIcon.Visible = false;
+            notifyIcon.Icon.Dispose();
+            notifyIcon.Dispose();
             Application.Exit();
         }
     }
