@@ -6,7 +6,7 @@ The main purpose of this project is to help you move more fluently between windo
 ## Usage and Capabilities
 |Action                              |Shortcut                                                  |
 |------------------------------------|----------------------------------------------------------|
-|Maximize window (toogle)            |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>       |
+|Maximize window (toggle)            |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>       |
 |Minimize window                     |<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>      |
 |Move focus to window on the right   |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right Arrow</kbd> |
 |Move focus to window on the left    |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>  |
