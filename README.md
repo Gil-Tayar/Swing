@@ -4,14 +4,14 @@
 The main purpose of this project is to help you move more fluently between windows
 
 ## Usage and Capabilities
-|Action                     |Shortcut                                                                                       |
-|---------------------------|-----------------------------------------------------------------------------------------------|
-|Maximize Window            |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd> (Press again to return to regular size)    |
-|Minimize Window            |<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>                                           |
-|Move focus to window on the right|<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right Arrow</kbd>                                      |
-|Move focus to window on the left |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>                                       |
-|Move focus to window above       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>                                         |
-|Move focus to window below       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>                                       |
+|Action                              |Shortcut                                                  |
+|------------------------------------|----------------------------------------------------------|
+|Maximize window (toogle)            |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>       |
+|Minimize window                     |<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>      |
+|Move focus to window on the right   |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right Arrow</kbd> |
+|Move focus to window on the left    |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>  |
+|Move focus to window above          |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>    |
+|Move focus to window below          |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>  |
 
 ## Demo
 ![](Swing.gif)
