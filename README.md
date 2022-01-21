@@ -14,7 +14,7 @@ The main purpose of this project is to help you move more fluently between windo
 |Move to Window below       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>                                       |
 
 ## Demo
-![](WWST.gif)
+![](Swing.gif)
 
 ## Installation
 Click here to download the latest release  
