@@ -8,10 +8,10 @@ The main purpose of this project is to help you move more fluently between windo
 |---------------------------|-----------------------------------------------------------------------------------------------|
 |Maximize Window            |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd> (Press again to return to regular size)    |
 |Minimize Window            |<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>                                           |
-|Move to Window on the right|<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right Arrow</kbd>                                      |
-|Move to Window on the left |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>                                       |
-|Move to Window above       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>                                         |
-|Move to Window below       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>                                       |
+|Move focus to window on the right|<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right Arrow</kbd>                                      |
+|Move focus to window on the left |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left Arrow</kbd>                                       |
+|Move focus to window above       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>                                         |
+|Move focus to window below       |<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>                                       |
 
 ## Demo
 ![](Swing.gif)
